@@ -19,7 +19,7 @@ var handlebars = require('express-handlebars').create({
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
-console.log('Configs: \n=== PORT: ', configs.port);
+// console.log('Configs: \n=== PORT: ', configs.port);
 app.set('port', process.env.PORT || configs.port);
 
 app.use(express.static(__dirname + '/public'));
@@ -50,8 +50,8 @@ app.get('/', function(req, res){
     res.render('home');
 });
 
-app.get('/home', function(req, res){
-    res.render('home');
+app.get('/about', function(req, res){
+    res.render('about');
 });
 
 // custom 404 page
